@@ -6,6 +6,25 @@ Data has been read into R to analyse using the following code:
 
 
 ```r
+URL <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+if(!file.exists("~/Documents/DataScience/Course 5/Programming Assignment 1/DATA"))
+{dir.create("~/Documents/DataScience/Course 5/Programming Assignment 1/DATA")}
+download.file(URL,destfile = 
+                "~/Documents/DataScience/Course 5/Programming Assignment 1/DATA/FitnessDevice_Dataset.zip")
+unzip(zipfile=
+        "~/Documents/DataScience/Course 5/Programming Assignment 1/DATA/FitnessDevice_Dataset.zip"
+      ,exdir="~/Documents/DataScience/Course 5/Programming Assignment 1/DATA")
+list.files("~/Documents/DataScience/Course 5/Programming Assignment 1/DATA")
+```
+
+```
+## [1] "activity.csv"              "FitnessDevice_Dataset.zip"
+```
+
+```r
+#  "activity.csv"              "FitnessDevice_Dataset.zip"
+
+# Read Data into R
 setwd("~/Documents/DataScience/Course 5/Programming Assignment 1/DATA")
 FIT_DATA <- read.table("activity.csv",sep = ",",header = TRUE)
 head(FIT_DATA)

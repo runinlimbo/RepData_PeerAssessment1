@@ -123,7 +123,20 @@ $(document).ready(function () {
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <p>Data has been read into R to analyse using the following code:</p>
-<pre class="r"><code>setwd(&quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA&quot;)
+<pre class="r"><code>URL &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
+if(!file.exists(&quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA&quot;))
+{dir.create(&quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA&quot;)}
+download.file(URL,destfile = 
+                &quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA/FitnessDevice_Dataset.zip&quot;)
+unzip(zipfile=
+        &quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA/FitnessDevice_Dataset.zip&quot;
+      ,exdir=&quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA&quot;)
+list.files(&quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA&quot;)</code></pre>
+<pre><code>## [1] &quot;activity.csv&quot;              &quot;FitnessDevice_Dataset.zip&quot;</code></pre>
+<pre class="r"><code>#  &quot;activity.csv&quot;              &quot;FitnessDevice_Dataset.zip&quot;
+
+# Read Data into R
+setwd(&quot;~/Documents/DataScience/Course 5/Programming Assignment 1/DATA&quot;)
 FIT_DATA &lt;- read.table(&quot;activity.csv&quot;,sep = &quot;,&quot;,header = TRUE)
 head(FIT_DATA)</code></pre>
 <pre><code>##   steps       date interval
