@@ -105,7 +105,7 @@ median(Steps_Sum$steps)
 ```
 ## [1] 10765
 ```
-####The mean total number of steps taken per day is 10,766.19 and the median is 10,765.
+#### The mean total number of steps taken per day is 10,766.19 and the median is 10,765.
 
 
 ## What is the average daily activity pattern?
@@ -135,7 +135,7 @@ It appears that the daily steps are the greatest between the 750 and 1000 minute
 Most_Steps_Interval <- Steps_Mean[which.max(Steps_Mean$steps),]
 ```
 
-####On average, the most step activity occurs during time interval 835, at 206.17 steps.
+#### On average, the most step activity occurs during time interval 835, at 206.17 steps.
 
 
 ## Imputing missing values
